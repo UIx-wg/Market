@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Pool & Market Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Pink Circle Aero Background -->
+    <div class="aero-bg"></div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CryptoPool</div>
+            <ul>
+                <li><a href="#market">Market</a></li>
+                <li><a href="#pool">Pool</a></li>
+                <li><a href="#api">API</a></li>
+                <li><a href="#explorer">Explorer</a></li>
+            </ul>
+            <input type="text" id="search" placeholder="Search cryptocurrency...">
+        </nav>
+    </header>
+    <main>
+        <section id="market" class="card-section">
+            <h2>Crypto Market Display</h2>
+            <div class="crypto-table">
+                <div class="table-header">
+                    <div>Name</div>
+                    <div>Symbol</div>
+                    <div>Price (USD)</div>
+                    <div>24h Change</div>
+                    <div>Market Cap</div>
+                </div>
+                <div id="crypto-rows">
+                    <!-- Dynamically Filled by JS -->
+                </div>
+            </div>
+        </section>
+        <section id="pool" class="card-section">
+            <h2>Mining Pool & Real-Time Block/Hash Regeneration</h2>
+            <div class="pool-cards">
+                <div class="pool-card">
+                    <h3>Current Block</h3>
+                    <div id="block-number" class="block-info"></div>
+                    <button onclick="regenBlock()">Regenerate Block</button>
+                </div>
+                <div class="pool-card">
+                    <h3>Current Hash</h3>
+                    <div id="block-hash" class="block-info"></div>
+                    <button onclick="regenHash()">Regenerate Hash</button>
+                </div>
+                <div class="pool-card">
+                    <h3>Mining Status</h3>
+                    <div id="mining-status" class="block-info"></div>
+                </div>
+            </div>
+        </section>
+        <section id="api" class="card-section">
+            <h2>API Documentation</h2>
+            <div class="doc-card">
+                <h4>Market API</h4>
+                <code>GET /api/market</code>
+                <p>Returns the latest market data for all supported cryptocurrencies.</p>
+            </div>
+            <div class="doc-card">
+                <h4>Pool API</h4>
+                <code>GET /api/pool/status</code>
+                <p>Returns current pool, block, and hash data.</p>
+            </div>
+        </section>
+        <section id="explorer" class="card-section">
+            <h2>Block Explorer</h2>
+            <div class="doc-card">
+                <p>Explore blocks, transactions, and hashes in real time.</p>
+                <input type="text" id="explorer-search" placeholder="Search block or hash...">
+                <div id="explorer-results"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CryptoPool. All rights reserved.</p>
+    </footer>
+    <script src="market.js"></script>
+    <script src="pool.js"></script>
+    <script src="aero-bg.js"></script>
+</body>
+</html>

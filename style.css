@@ -1,0 +1,226 @@
+/* Aero UI white/pink theme */
+:root {
+    --main-bg: #ffffffcc;
+    --accent: #ffb6e6;
+    --accent-darker: #eb69c6;
+    --navbar-bg: #fff6faee;
+    --text: #2d2d2d;
+    --card-bg: #fff5fdcc;
+    --shadow: 0 4px 24px 0 #ffb6e633;
+    --border-radius: 18px;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--main-bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+.aero-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background: transparent;
+}
+
+header {
+    position: relative;
+    z-index: 2;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navbar-bg);
+    box-shadow: var(--shadow);
+    padding: 16px 32px;
+    border-radius: var(--border-radius);
+    margin: 20px;
+}
+
+.navbar .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--accent-darker);
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+.navbar a:hover {
+    color: var(--accent-darker);
+}
+
+.navbar input[type="text"] {
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--accent);
+    background: #fff;
+    font-size: 1rem;
+    margin-left: 18px;
+    outline: none;
+}
+
+main {
+    margin: 0 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.card-section {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 24px 28px;
+    margin: 32px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.crypto-table {
+    margin-top: 16px;
+    background: #fff8ffcc;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+}
+
+.table-header, .crypto-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+}
+
+.table-header {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+}
+
+.crypto-row {
+    background: #fff;
+    border-bottom: 1px solid #ffe3fa;
+    transition: background 0.15s;
+}
+.crypto-row:hover {
+    background: #ffe3fa22;
+}
+
+.pool-cards {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+.pool-card {
+    background: #fff8ffcc;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 22px 24px;
+    min-width: 230px;
+    flex: 1;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.pool-card h3 {
+    margin-top: 0;
+    color: var(--accent-darker);
+}
+.block-info {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    word-break: break-all;
+}
+.pool-card button {
+    background: linear-gradient(90deg, var(--accent), var(--accent-darker));
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+.pool-card button:hover {
+    background: linear-gradient(90deg, var(--accent-darker), var(--accent));
+}
+
+.doc-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 16px 20px;
+    margin: 18px 0;
+}
+
+#explorer-search {
+    margin: 10px 0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    font-size: 1rem;
+    width: 100%;
+}
+
+#explorer-results {
+    margin-top: 12px;
+    min-height: 32px;
+    font-size: 1rem;
+    color: var(--accent-darker);
+}
+
+footer {
+    text-align: center;
+    margin: 28px 0 12px 0;
+    color: #a7a7a7;
+    z-index: 2;
+    position: relative;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .pool-cards {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .table-header, .crypto-row {
+        grid-template-columns: 70px 60px 1fr 1fr 1fr;
+        font-size: 0.92rem;
+        gap: 7px;
+        padding: 10px 8px;
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 8px;
+    }
+}
